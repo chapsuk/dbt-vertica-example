@@ -1,4 +1,4 @@
-PYTHON_BIN=python3
+PYTHON_BIN=python3	
 
 .PHONY: generate_data
 generate_data:

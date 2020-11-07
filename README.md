@@ -13,16 +13,16 @@ This repo contains dbt-vertica example of bro app
 - `dbt 0.18.1`
 - `dbt-vertica`
 
+## Run dev env
+
+```
+$ docker-compose up -d
+```
+
 ## Init deps
 
 ```
 $ dbt deps
-```
-
-## Run docker env
-
-```
-$ docker-compose up -d
 ```
 
 ## Generate datasets
@@ -34,6 +34,8 @@ Run `python ./scripts/generate_data.py` to generate events datasets:
 1. `bro.csv` - from,to,craeted_at
 
 ## Load data to Stage
+
+[This tooks ~10min](https://github.com/mpcarter/dbt-vertica/issues/2)
 
 ```
 $ dbt seed
