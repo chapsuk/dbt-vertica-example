@@ -1,0 +1,14 @@
+version: '2.4'
+
+services:
+
+  vertica:
+    image: dataplatform/docker-vertica
+    container_name: bro_vertica
+    ports:
+      - 5433:5433
+    healthcheck:
+      test: /opt/vertica/bin/vsql -U dbadmin -c "select 1;"
+      interval: 10s
+      timeout: 10s
+      retries: 10

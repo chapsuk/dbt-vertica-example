@@ -1,0 +1,5 @@
+/data/*.csv
+.vscode
+/logs
+/target
+/dbt_modules

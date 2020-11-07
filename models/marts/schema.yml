@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: mrt_registrations_daily
+    description: Registrations by day, country
+    columns:
+      - name: day
+        tests:
+          - not_null
+      - name: reg_count
+        tests:
+          - not_null
+      - name: country
+        test:
+          - not_null
+  
+  - name: mrt_bros_daily
+    columns:
+      - name: day
+        tests:
+          - not_null
+      - name: country
+        test:
+          - not_null
+      - name: bros_count
+        test:
+          - not_null

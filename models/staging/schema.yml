@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_bro
+    columns:
+      - name: user_from
+        tests:
+          - not_null
+      - name: user_to
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+  
+  - name: stg_login
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+    
+  - name: stg_registration
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null
+      - name: ref
+      - name: created_at
+        tests:
+          - not_null

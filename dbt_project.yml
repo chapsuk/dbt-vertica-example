@@ -1,0 +1,28 @@
+name: broapp
+version: 0.1
+profile: broapp
+
+analysis-paths: ["analysis"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+source-paths: ["models"]
+target-path: "target"
+test-paths: ["tests"]
+
+clean-targets:
+  - "target"
+  - "dbt_modules"
+  - "logs"
+
+models:
+  broapp:
+    # materialized: table
+    staging:
+      materialized: view
+      tags: ["staging", "hourly"]
+    dds:
+      materialized: view
+      tags: ["dds"]
+    marts:
+      materialized: table
+      tags: ["marts"]

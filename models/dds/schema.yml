@@ -1,0 +1,60 @@
+version: 2
+
+models:
+
+  - name: dim_users
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_refered
+    columns:
+      - name: actor_id
+        tests:
+          - not_null
+      - name: target_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+
+  - name: fct_registrations
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: country
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+
+  - name: fct_logins
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+
+  - name: fct_bros
+    columns:
+      - name: actor_id
+        tests:
+          - not_null
+      - name: receiver_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
